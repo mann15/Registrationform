@@ -5,7 +5,7 @@ const User = require("./model/user");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 
-// Load environment variables from .env file
+
 dotenv.config();
 
 const port = process.env.PORT || 3000;
@@ -13,11 +13,9 @@ const port = process.env.PORT || 3000;
 const username = process.env.USERNAME;
 const password = process.env.PASSWORD;
 
-
 mongoose
   .connect(
-    `mongodb+srv://${username}:${password}@registration.wminhwz.mongodb.net/`,
-    { useNewUrlParser: true, useUnifiedTopology: true }
+    `mongodb+srv://${username}:${password}@registration.wminhwz.mongodb.net/`
   )
   .then(() => {
     console.log("Connected to database");
